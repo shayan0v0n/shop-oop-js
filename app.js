@@ -15,6 +15,7 @@ class Product {
         try {
             const result = await fetch("products.json")
             const data = await result.json()
+
             let products = data.items;
             products = products.map(item => {
                 const {title, price} = item.fields;
@@ -49,6 +50,10 @@ class View {
             `
         })
         productsDOM.innerHTML = result;
+    }
+
+    displayLoading() {
+        productsDOM.innerHTML = `<p class="loading">لطفا منتظر بمانید...</p>`
     }
 
     getCartButtons() {
@@ -223,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const product = new Product();
     const view = new View();
 
+    view.displayLoading();
     product.getProducts()
         .then(res => {
             view.displayProducts(res); // display products

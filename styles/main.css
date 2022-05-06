@@ -235,3 +235,12 @@ body {
 .cart-footer h3 {
   margin-bottom: 1rem;
 }
+
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: #eee;
+  border-radius: 5px;
+  padding: 1rem;
+}
